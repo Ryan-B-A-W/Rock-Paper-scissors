@@ -14,11 +14,7 @@ User interface will be implemented at a later date after the project is created.
 Tasks:
 
     Prepare HTML file, linking in both CSS and Javascript files. X
-    Create variables what wil be used during the project:
-        Player score
-        Player selection
-        CPU score
-        CPU selection
-        Rounds played
-    Create function that plays a single round of the game, will need to parameters for player and CPU selection.
-    Create function what includes a loop while tracking score, winner is first to 5 wins.
+    Create a function what will get the CPU selection X
+    Create a function for player selection X
+    Create function that plays a single round of the game. X
+    Create function what loops the game 5 or more times, while tracking score, winner is first to 5 wins, loop must end when winner is declared. X
