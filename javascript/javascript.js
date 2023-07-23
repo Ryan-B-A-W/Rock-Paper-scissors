@@ -94,10 +94,3 @@ function game(){
 }
 
 game()
-
-/*
-    if (playerSelection == computerSelection){
-        console.log(`Draw! Player selected ${playerSelection} & the computer selected ${computerSelection}`)
-        return 0
-    } 
-*/
