@@ -13,7 +13,7 @@ User interface will be implemented at a later date after the project is created.
 
 Tasks:
 
-    Prepare HTML file, linking in both CSS and Javascript files.
+    Prepare HTML file, linking in both CSS and Javascript files. X
     Create variables what wil be used during the project:
         Player score
         Player selection
