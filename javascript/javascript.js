@@ -1,6 +1,5 @@
+let computerScore = 0
 let playerScore = 0
-let CPUScore = 0
-let roundsPlayed = 0
 let gameChoices = [`rock`, `paper`, `scissors`]
 
 function getComputerChoice(){
@@ -63,7 +62,38 @@ function playRound(playerSelection,computerSelection){
     }
 }
 
-playRound()
+function game(){
+    while (true){
+        switch (playRound()){
+            case 0:
+                console.log(`Current score is: Player ${playerScore} / Computer ${computerScore}`)
+                break;
+            case 1:
+                playerScore++
+                console.log(`Current score is: Player ${playerScore} / Computer ${computerScore}`)
+                break;
+            case 2:
+                computerScore++
+                console.log(`Current score is: Player ${playerScore} / Computer ${computerScore}`)
+                break;
+        }
+        if (playerScore == `5`){
+            console.log(`You won!`)
+            playerScore = 0
+            computerScore = 0
+            break;
+        } else if (computerScore == `5`) {
+            console.log(`You lost!`)
+            playerScore = 0
+            computerScore = 0
+            break;
+        } else{
+            continue
+        }
+    }
+}
+
+game()
 
 /*
     if (playerSelection == computerSelection){
