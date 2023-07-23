@@ -26,11 +26,48 @@ function getPlayerChoice(i = false){
 }
 
 function playRound(playerSelection,computerSelection){
-    playerSelection = getPlayerChoice()
     computerSelection = getComputerChoice()
+    playerSelection = getPlayerChoice()
     if (playerSelection == computerSelection){
-        console.log(`Draw! Player selected ${playerSelection} & the computer selected ${computerSelection}`)
+        console.log(`Draw! player selected ${playerSelection} & the computer selected ${computerSelection}`)
+        return 0
+    } else {
+        let gameDecision = gameChoices.indexOf(playerSelection) + gameChoices.indexOf(computerSelection)
+        console.log(gameDecision)
+        switch (gameDecision){
+            case 1:
+                if (playerSelection == `paper`){
+                    console.log(`Player wins! player selected ${playerSelection} & the computer selected ${computerSelection}`)
+                    return 1
+                } else {
+                    console.log(`Computer wins! player selected ${playerSelection} & the computer selected ${computerSelection}`)
+                    return 2
+                }
+            case 2:
+                if (playerSelection == `rock`){
+                    console.log(`Player wins! player selected ${playerSelection} & the computer selected ${computerSelection}`)
+                    return 1
+                } else {
+                    console.log(`Computer wins! player selected ${playerSelection} & the computer selected ${computerSelection}`)
+                    return 2
+                }
+            case 3:
+                if (playerSelection == `scissors`){
+                    console.log(`Player wins! player selected ${playerSelection} & the computer selected ${computerSelection}`)
+                    return 1
+                } else {
+                    console.log(`Computer wins! player selected ${playerSelection} & the computer selected ${computerSelection}`)
+                    return 2
+                }
+        }
     }
 }
 
 playRound()
+
+/*
+    if (playerSelection == computerSelection){
+        console.log(`Draw! Player selected ${playerSelection} & the computer selected ${computerSelection}`)
+        return 0
+    } 
+*/
