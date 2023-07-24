@@ -2,11 +2,15 @@ let computerScore = 0
 let playerScore = 0
 let gameChoices = [`rock`, `paper`, `scissors`]
 
+//getComputerChoice selects the computers option for each round, this uses a random generated number to get a rounded number between 0 and 2, this is then used to select one of three options within gameChoices.
+
 function getComputerChoice(){
     let CPUselection = Math.floor((Math.random() * 10) % 3)
     console.log(`CPU SELECTION TEST - ` + gameChoices[CPUselection])
     return gameChoices[CPUselection]
 }
+
+//getPlayerChoice allows the player to select a option via a prompt(), this will allow capital letters or non capital letters as long as it is spelled correctly, it also has a fail safe to ensure the player selects an option instead of inputting random values.
 
 function getPlayerChoice(i = false){
     while (i != true){
@@ -23,6 +27,8 @@ function getPlayerChoice(i = false){
 
     }
 }
+
+//playRound plays a single round of rock paper scissors, this firsts to check for a tie and returns 0 if it is, if it isn't it the function will check which option won the round and then check who selected that option, if it was the player it returned 1 and if it was the computer it returned 2.
 
 function playRound(playerSelection,computerSelection){
     computerSelection = getComputerChoice()
@@ -62,6 +68,8 @@ function playRound(playerSelection,computerSelection){
     }
 }
 
+//game() plays the game by calling the functions above within a while loop, depending on the number returned by the playRound() it will either not add a number to the score or increase the score of the Computer or Player, when the score reaches 5 a if statement will check to see who won, declare the winner and then reset the scores back to 0
+
 function game(){
     while (true){
         switch (playRound()){
@@ -69,20 +77,20 @@ function game(){
                 console.log(`Current score is: Player ${playerScore} / Computer ${computerScore}`)
                 break;
             case 1:
-                playerScore++
+                ++playerScore
                 console.log(`Current score is: Player ${playerScore} / Computer ${computerScore}`)
                 break;
             case 2:
-                computerScore++
+                ++computerScore
                 console.log(`Current score is: Player ${playerScore} / Computer ${computerScore}`)
                 break;
         }
-        if (playerScore == `5`){
+        if (playerScore == 5){
             console.log(`You won!`)
             playerScore = 0
             computerScore = 0
             break;
-        } else if (computerScore == `5`) {
+        } else if (computerScore == 5) {
             console.log(`You lost!`)
             playerScore = 0
             computerScore = 0
